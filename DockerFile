@@ -32,3 +32,5 @@ RUN mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.1:go-offline
 COPY . .
 
 RUN chmod 777 -R /perf-run /${APPLICATION_NAME}-${VERSION}.${TYPE}
+
+RUN sed -i -e 's/\r$//' /perf-run/emtrypoint.sh
