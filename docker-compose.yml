@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+
+  gatling-runner:
+    build:
+      context: ./
+      dockerfile: DockerFile
+      args:
+        GIT_REPO_NAME: nasa-rest-api
+        GIT_BASE: https://github.com
+        GIT_USER: salmanthecoder
+        APPLICATION_NAME: consume-rest
+        VERSION: 0.0.1-SNAPSHOT
+        TYPE: jar
+    image: gatling-runner
+    environment:
+      - GIT_REPO_NAME=nasa-rest-api
+      - GIT_BASE=https://github.com
+      - GIT_USER=salmanthecoder
+      - APPLICATION_NAME=consume-rest
+      - VERSION=0.0.1-SNAPSHOT
+      - TYPE=jar
+    entrypoint: /perf-run/entrypoint.sh
