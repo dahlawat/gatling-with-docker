@@ -33,4 +33,4 @@ COPY . .
 
 RUN chmod 777 -R /perf-run /${APPLICATION_NAME}-${VERSION}.${TYPE}
 
-RUN sed -i -e 's/\r$//' /perf-run/emtrypoint.sh
+RUN sed -i -e 's/\r$//' /perf-run/entrypoint.sh
